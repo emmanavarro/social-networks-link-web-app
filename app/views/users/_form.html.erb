@@ -1,52 +1,53 @@
-<%= form_with(model: user) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<%= simple_form_for(@user) do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-        <% user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
+  <div class="form inputs">
+    <%= f.input :first_name %>
   </div>
 
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
+  <div class="form inputs">
+    <%= f.input :last_name %>
   </div>
 
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
+  <div class="form inputs">
+    <%= f.input :phone %>
   </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+  <div class="form inputs">
+    <%= f.input :email %>
   </div>
 
-  <div class="field">
-    <%= form.label :country %>
-    <%= form.text_field :country %>
+  <div class="form inputs">
+    <%= f.input :country %>
   </div>
 
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city %>
+  <div class="form inputs">
+    <%= f.input :city %>
   </div>
 
-  <div class="field">
-    <%= form.label :bio %>
-    <%= form.text_field :bio %>
+  <div class="form inputs">
+    <%= f.input :bio %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <h4>Social Networks</h4>
+
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Social network name</th>
+        <th>Profile link</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody class='socials'>
+      <%= f.simple_fields_for :socials do |builder| %>
+        <%= render 'social_fields', f: builder %>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-success' %>
+    <%= link_to_add_association 'Add New Link', f, :socials, class: 'btn btn-primary', data: { association_insertion_node: '.socials', association_insertion_method: :append } %>
   </div>
 <% end %>

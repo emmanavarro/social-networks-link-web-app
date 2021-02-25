@@ -13,10 +13,12 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @user.socials.build
   end
 
   # GET /users/1/edit
   def edit
+    @user.socials.build
   end
 
   # POST /users or /users.json
@@ -57,13 +59,23 @@ class UsersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def user_params
-      params.require(:user).permit(:first_name, :last_name, :phone, :email, :country, :city, :bio)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def user_params
+    params
+      .require(:user)
+      .permit(:first_name,
+              :last_name,
+              :phone,
+              :email,
+              :country,
+              :city,
+              :bio,
+              socials_attributes: Social.attribute_names.map(&:to_sym).push(:_destroy))
+  end
 end
