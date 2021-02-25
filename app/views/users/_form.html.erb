@@ -1,32 +1,34 @@
 <%= simple_form_for(@user) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form inputs">
-    <%= f.input :first_name %>
-  </div>
+  <div class="row g-3 input-group">
+    <div class="form">
+      <%= f.input :first_name, prepend: "@" %>
+    </div>
 
-  <div class="form inputs">
-    <%= f.input :last_name %>
-  </div>
+    <div class="form inputs">
+      <%= f.input :last_name %>
+    </div>
 
-  <div class="form inputs">
-    <%= f.input :phone %>
-  </div>
+    <div class="form inputs">
+      <%= f.input :phone %>
+    </div>
 
-  <div class="form inputs">
-    <%= f.input :email %>
-  </div>
+    <div class="form inputs">
+      <%= f.input :email %>
+    </div>
 
-  <div class="form inputs">
-    <%= f.input :country %>
-  </div>
+    <div class="form inputs">
+      <%= f.input :country %>
+    </div>
 
-  <div class="form inputs">
-    <%= f.input :city %>
-  </div>
+    <div class="form inputs">
+      <%= f.input :city %>
+    </div>
 
-  <div class="form inputs">
-    <%= f.input :bio %>
+    <div class="form inputs">
+      <%= f.input :bio %>
+    </div>
   </div>
 
   <h4>Social Networks</h4>

@@ -22,6 +22,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'cocoon'
+gem 'font-awesome-sass', '~> 5.15', '>= 5.15.1'
 gem 'jquery-rails'
 gem 'simple_form'
 

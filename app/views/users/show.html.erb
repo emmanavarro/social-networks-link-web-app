@@ -1,39 +1,50 @@
-<p id="notice"><%= notice %></p>
+<div class="p-5 text-left bg-light rounded-lg m-5">
+    <h1 class="mb-3">
+      <%= @user.first_name %>
+      <%= @user.last_name %>
+    </h1>
+  <p>
+    <strong>First name:</strong>
+    <%= @user.first_name %>
+  </p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
+  <p>
+    <strong>Last name:</strong>
+    <%= @user.last_name %>
+  </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
+  <p>
+    <strong>Phone:</strong>
+    <%= @user.phone %>
+  </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @user.phone %>
-</p>
+  <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+  <p>
+    <strong>Country:</strong>
+    <%= @user.country %>
+  </p>
 
-<p>
-  <strong>Country:</strong>
-  <%= @user.country %>
-</p>
+  <p>
+    <strong>City:</strong>
+    <%= @user.city %>
+  </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @user.city %>
-</p>
+  <p>
+    <strong>Bio:</strong>
+    <%= @user.bio %>
+  </p>
 
-<p>
-  <strong>Bio:</strong>
-  <%= @user.bio %>
-</p>
+  <% @user.socials.each do |profile| %>
+  <p>
+      <strong><%= profile.social_network_name %>: </strong>
+      <%= profile.profile_link %>
+  </p>
+  <% end %>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Back', users_path %>
+</div>
