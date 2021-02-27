@@ -16,4 +16,7 @@ class User < ApplicationRecord
   validates :bio,
             presence: true,
             length: { minimum: 30, maximum: 350 }
+
+  has_one_attached :image
+
 end
