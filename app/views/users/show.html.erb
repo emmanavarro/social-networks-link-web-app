@@ -1,6 +1,8 @@
 <div class="p-5 text-left bg-light rounded-lg m-5">
 
-  <%= image_tag @user.image.variant(resize: '400x400') %>
+  <% if @user.image.attached? %>
+    <%= image_tag @user.image.variant(resize: '400x400') %>
+  <% end %>
 
   <h1 class="mb-3">
     <%= @user.first_name %>
@@ -18,13 +20,8 @@
   </p>
 
   <p>
-    <strong>Country:</strong>
-    <%= @user.country %>
-  </p>
-
-  <p>
-    <strong>City:</strong>
-    <%= @user.city %>
+    <strong>Location:</strong>
+    <%= @user.city %>, <%= @user.country %>
   </p>
 
   <p>
@@ -34,8 +31,8 @@
 
   <% @user.socials.each do |profile| %>
   <p>
-      <strong><%= profile.social_network_name %>: </strong>
-      <%= profile.profile_link %>
+    <strong><%= profile.social_network_name %>: </strong>
+    <%= profile.profile_link %>
   </p>
   <% end %>
 
