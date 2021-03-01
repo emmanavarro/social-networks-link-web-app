@@ -1,7 +1,13 @@
-<tr class="nested-fields">
-  <td><%= f.input :social_network_name, label: false %></td>
-  <td><%= f.input :profile_link, label: false %></td>
-  <td>
-    <%= link_to_remove_association "Remove", f, class: "btn text-light btn-danger"%>
+<div class="nested-fields">
+  <div class="field form-group mb-3">
+    <%= f.label :social_network_name %>
+    <%= f.text_field :social_network_name, class: 'form-control', placeholder: 'LinkedIn, Twitter, Instagram...' %>
+  </div>
+
+  <div class="field form-group mb-3">
+    <%= f.label :profile_link %>
+    <%= f.text_field :profile_link, class: 'form-control', placeholder: 'https://www.myscocialnetwork.com/username' %>
+  </div>
+    <%= link_to "Remove", '#', class: "remove_fields" %>
   </td>
-</tr>
+</div>

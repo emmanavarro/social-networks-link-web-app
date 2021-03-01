@@ -1,8 +1,11 @@
 <div class="p-5 text-left bg-light rounded-lg m-5">
-    <h1 class="mb-3">
-      <%= @user.first_name %>
-      <%= @user.last_name %>
-    </h1>
+
+  <%= image_tag @user.image.variant(resize: '400x400') %>
+
+  <h1 class="mb-3">
+    <%= @user.first_name %>
+    <%= @user.last_name %>
+  </h1>
 
   <p>
     <strong>Phone:</strong>

@@ -10,6 +10,9 @@ import "channels"
 import "jquery"
 import "@nathanvda/cocoon"
 
+require('./nested-forms/addFields')
+require('./nested-forms/removeFields')
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()

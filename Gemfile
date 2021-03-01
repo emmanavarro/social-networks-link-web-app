@@ -24,11 +24,11 @@ gem 'jbuilder', '~> 2.7'
 gem 'cocoon'
 gem 'font-awesome-sass', '~> 5.15', '>= 5.15.1'
 gem 'jquery-rails'
+gem 'mini_magick', '~> 4.11'
 gem 'simple_form'
 
-
 # Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.2', '>= 1.12.1'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

@@ -76,7 +76,7 @@ class UsersController < ApplicationController
               :country,
               :city,
               :bio,
-              socials_attributes: Social.attribute_names.map(&:to_sym).push(:_destroy),
-              :image)
+              :image,
+              socials_attributes: Social.attribute_names.map(&:to_sym).push(:_destroy))
   end
 end
