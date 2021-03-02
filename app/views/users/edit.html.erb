@@ -1,6 +1,8 @@
-<h1>Editing User</h1>
+<div class='m-3'>
+  <h1>Editing User</h1>
 
-<%= render 'form', user: @user %>
-
-<%= link_to 'Show', @user %>
-<%= link_to 'Back', users_path %>
+  <%= render 'form', user: @user %>
+  <br/>
+  <%= link_to ('<i class="fas fa-chevron-left"></i>').html_safe, users_path, class: 'btn btn-secondary btn-sm' %>
+  <%= link_to ('<i class="far fa-eye"></i>').html_safe, @user, class: 'btn btn-secondary btn-sm' %>
+</div>

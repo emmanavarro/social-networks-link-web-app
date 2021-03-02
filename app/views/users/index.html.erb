@@ -17,15 +17,15 @@
     <tbody>
       <% @users.each do |user| %>
         <tr>
-          <td><%= image_tag user.image.variant(resize: '100x100') if user.image.attached? %></td>
+          <td><%= link_to image_tag(user.image.variant(resize_to_fill: [100, 100])), user.image if user.image.attached? %></td>
           <td><%= user.first_name %> <%= user.last_name %></td>
           <td><%= user.phone %></td>
           <td><%= user.email %></td>
           <td><%= user.city %>, <%= user.country %></td>
           <td><%= user.bio %></td>
-          <td><%= link_to 'Show', user, class: 'btn btn-primary btn-sm' %></td>
-          <td><%= link_to 'Edit', edit_user_path(user), class: 'btn btn-primary btn-sm' %></td>
-          <td><%= link_to 'Delete', user, class: 'btn btn-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to ('<i class="far fa-eye"></i>').html_safe, user, class: 'btn btn-primary btn-sm' %></td>
+          <td><%= link_to ('<i class="fas fa-edit"></i>').html_safe, edit_user_path(user), class: 'btn btn-primary btn-sm' %></td>
+          <td><%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, user, class: 'btn btn-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
