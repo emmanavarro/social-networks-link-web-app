@@ -1,8 +1,6 @@
 <div class="p-5 text-left bg-light rounded-3 m-3">
 
-  <% if @user.image.attached? %>
-    <%= link_to image_tag(@user.image.variant(resize_to_fill: [400, 400]), class: 'image-show'), @user.image, target: :_blank %>
-  <% end %>
+  <%= image_tag(@user.image.variant(:thumb)) %>
 
   <h1 class="mb-3">
     <%= @user.first_name %>
