@@ -17,7 +17,7 @@
     <tbody>
       <% @users.each do |user| %>
         <tr>
-          <td><%= link_to image_tag(user.image.variant(resize_to_fill: [100, 100])), user.image if user.image.attached? %></td>
+          <td><%= link_to image_tag(user.image.variant(resize_to_fill: [100, 100]), class: 'image-list'), user.image, target: :_blank if user.image.attached? %></td>
           <td><%= user.first_name %> <%= user.last_name %></td>
           <td><%= user.phone %></td>
           <td><%= user.email %></td>

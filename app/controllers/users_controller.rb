@@ -58,4 +58,9 @@ class UsersController < ApplicationController
               :bio, :image,
               socials_attributes: %i[id social_network_name profile_link _destroy])
   end
+
+  # def image_type_confirmation
+  #   accepted_types = ['image/png', 'image/jpeg']
+  #   if image.attached? && 
+  # end
 end

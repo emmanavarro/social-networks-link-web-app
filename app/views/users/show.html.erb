@@ -1,7 +1,7 @@
 <div class="p-5 text-left bg-light rounded-3 m-3">
 
   <% if @user.image.attached? %>
-    <%= link_to image_tag(@user.image.variant(resize_to_fill: [400, 400])), @user.image %>
+    <%= link_to image_tag(@user.image.variant(resize_to_fill: [400, 400]), class: 'image-show'), @user.image, target: :_blank %>
   <% end %>
 
   <h1 class="mb-3">
@@ -32,7 +32,7 @@
   <% @user.socials.each do |profile| %>
   <p>
     <strong><%= profile.social_network_name %>: </strong>
-    <%= profile.profile_link %>
+    <%= link_to profile.profile_link, profile.profile_link, target: :_blank %>
   </p>
   <% end %>
 
